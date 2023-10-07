@@ -8,7 +8,7 @@ class CardProvider extends ChangeNotifier {
   Offset _position = Offset.zero;
   Size _screenSize = Size.zero;
   List<String> _urlImages = [];
-  final _delta = 300;
+  final _delta = 120;
 
   // 0 - none | 1 - horizontal | -1 - vertical
   int _initalDrag = 0;
