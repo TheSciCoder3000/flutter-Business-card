@@ -4,9 +4,9 @@ import 'package:test_micard_flutter/business_card.dart';
 import 'package:test_micard_flutter/util/card_provider.dart';
 
 class TinderCard extends StatefulWidget {
-  final String imgUrl;
+  final dynamic cardInfo;
   final bool isFront;
-  const TinderCard({super.key, required this.imgUrl, required this.isFront});
+  const TinderCard({super.key, required this.cardInfo, required this.isFront});
 
   @override
   State<TinderCard> createState() => _TinderCardState();
@@ -72,7 +72,12 @@ class _TinderCardState extends State<TinderCard> {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20.0),
       child: BusinessCard(
-        imgUrl: widget.imgUrl,
+        imgUrl: widget.cardInfo['cardUrl'], 
+        name: widget.cardInfo['name'], 
+        title: widget.cardInfo['title'], 
+        phoneNo: widget.cardInfo['number'], 
+        location: widget.cardInfo['location'], 
+        avatarUrl: widget.cardInfo['avatarUrl'],
       ),
     );
   }

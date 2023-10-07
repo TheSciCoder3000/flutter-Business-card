@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
 
 class BusinessCard extends StatelessWidget {
-  const BusinessCard({super.key, required this.imgUrl});
+  const BusinessCard({
+    super.key, 
+    required this.imgUrl,
+    required this.name,
+    required this.title,
+    required this.phoneNo,
+    required this.location,
+    required this.avatarUrl
+  });
   final String imgUrl;
-  final String name = "John Juvi De Villa";
-  final String title = "Embedded System Engineer";
-  final String phoneNo = "0995 428 9231";
-  final String location = "sa puso mo";
+  final String name;
+  final String title;
+  final String phoneNo;
+  final String location;
+  final String avatarUrl;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(imgUrl), 
+            image: AssetImage(imgUrl), 
             fit: BoxFit.cover,
             colorFilter: const ColorFilter.mode(Color.fromARGB(137, 0, 0, 0), BlendMode.darken)
           ), 
@@ -33,12 +42,12 @@ class BusinessCard extends StatelessWidget {
                 )
               ]
             ),
-            child: const CircleAvatar(
+            child: CircleAvatar(
               radius: 75.0,
               backgroundColor: Colors.green,
               child: CircleAvatar(
                 radius: 70,
-                backgroundImage: NetworkImage('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Robert_Downey%2C_Jr._2012.jpg/1200px-Robert_Downey%2C_Jr._2012.jpg'),
+                backgroundImage: AssetImage(avatarUrl),
               ),
             ),
           ),
