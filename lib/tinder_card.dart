@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_micard_flutter/card_provider.dart';
+import 'package:test_micard_flutter/util/card_provider.dart';
 
 class TinderCard extends StatefulWidget {
   final String imgUrl;
-  const TinderCard({super.key, required this.imgUrl});
+  final bool isFront;
+  const TinderCard({super.key, required this.imgUrl, required this.isFront});
 
   @override
   State<TinderCard> createState() => _TinderCardState();
@@ -24,9 +25,10 @@ class _TinderCardState extends State<TinderCard> {
 
   @override
   Widget build(BuildContext context) {
-    return buildFrontCard();
+    return widget.isFront ? buildFrontCard() : buildCard();
   }
 
+  // add gesture detector to Card
   Widget buildFrontCard() => GestureDetector(
     child: Builder(
       builder: (context) {
@@ -34,10 +36,13 @@ class _TinderCardState extends State<TinderCard> {
         final position = provider.position;
         final milliseconds = provider.isDragging ? 0 : 400;
 
+        final double x = position.dx;
+        final double y = position.dy;
+
         return AnimatedContainer(
           curve: Curves.easeInOut,
           duration: Duration(milliseconds: milliseconds),
-          transform: Matrix4.identity()..translate(position.dx, 0),
+          transform: Matrix4.identity()..translate(x, y),
           child: buildCard()
         );
       }
@@ -59,6 +64,9 @@ class _TinderCardState extends State<TinderCard> {
     },
   );
 
+  
+
+  // main card widget builder
   Widget buildCard() {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20.0),
