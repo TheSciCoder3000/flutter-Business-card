@@ -9,7 +9,7 @@ void main() {
       create: (context) => CardProvider(),
       child: const MaterialApp(
         home: Scaffold(
-          backgroundColor: Colors.teal,
+          backgroundColor: Color.fromARGB(255, 52, 52, 52),
           body: SafeArea(child: MainPage()),
         ),
       ),
@@ -29,7 +29,17 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     final provider = Provider.of<CardProvider>(context);
     final urlImages = provider.getUrlImages;
-    print(urlImages);
+
+    if (urlImages.isEmpty) {
+      return Center(
+      child: ElevatedButton(
+        onPressed: () {
+          provider.resetCards();
+        },
+        child: const Text("Reset"),
+      ),
+    );
+    }
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 70.0),
