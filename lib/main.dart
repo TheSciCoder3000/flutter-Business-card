@@ -28,9 +28,9 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<CardProvider>(context);
-    final urlImages = provider.getUrlImages;
+    final cardData = provider.cardData;
 
-    if (urlImages.isEmpty) {
+    if (cardData.isEmpty) {
       return Center(
       child: ElevatedButton(
         onPressed: () {
@@ -44,10 +44,10 @@ class _MainPageState extends State<MainPage> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 70.0),
       child: Stack(
-        children: urlImages.map((urlImage) => 
+        children: cardData.map((cardInfo) => 
           TinderCard(
-            imgUrl: urlImage,
-            isFront: urlImages.last == urlImage,
+            cardInfo: cardInfo,
+            isFront: cardData.last['id'] == cardInfo['id'],
           )
         ).toList(),
       )

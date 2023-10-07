@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'dart:convert';
 
 enum CardStatus { accept, reject, pending }
 
@@ -7,8 +9,8 @@ class CardProvider extends ChangeNotifier {
   bool _isDragging = false;
   Offset _position = Offset.zero;
   Size _screenSize = Size.zero;
-  List<String> _urlImages = [];
   final _delta = 120;
+  List<dynamic> _cardData = [];
 
   // 0 - none | 1 - horizontal | -1 - vertical
   int _initalDrag = 0;
@@ -16,17 +18,20 @@ class CardProvider extends ChangeNotifier {
   Offset get position => _position;
   bool get isDragging => _isDragging;
   int get initalDrag => _initalDrag;
-  List<String> get getUrlImages => _urlImages;
+  List<dynamic> get cardData => _cardData;
 
   CardProvider() {
-    resetCards();
+    readJson();
   }
 
   void resetCards() {
-    _urlImages = <String>[
-      'https://cdn.vox-cdn.com/thumbor/fFu0lMnsc4-6UtX0FSK6uIiJe_w=/0x0:3000x1779/920x613/filters:focal(1204x216:1684x696):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/59606327/ktokatitmir0.0.jpg',
-      'https://static.wikia.nocookie.net/marvelcinematicuniverse/images/9/9a/BlackWidow-EndgameProfile.jpg/revision/latest?cb=20190423174842',
-    ].reversed.toList();
+    readJson();
+  }
+
+  Future<void> readJson() async {
+    final String response = await rootBundle.loadString('assets/data.json');
+    final data = await json.decode(response);
+    _cardData = data['cards'];
 
     notifyListeners();
   }
@@ -101,10 +106,10 @@ class CardProvider extends ChangeNotifier {
 
   // ============================= HELPER FUNCTIONS =============================  
   Future _nextCard() async {
-    if (_urlImages.isEmpty) return;
+    if (_cardData.isEmpty) return;
 
     await Future.delayed(const Duration(milliseconds: 200));
-    _urlImages.removeLast();
+    _cardData.removeLast();
     resetPosition();
   }
   
