@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:test_micard_flutter/business_card.dart';
 import 'package:test_micard_flutter/util/card_provider.dart';
 
 class TinderCard extends StatefulWidget {
@@ -70,13 +71,8 @@ class _TinderCardState extends State<TinderCard> {
   Widget buildCard() {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20.0),
-      child: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-              image: NetworkImage(widget.imgUrl), 
-              fit: BoxFit.cover
-            )
-        ),
+      child: BusinessCard(
+        imgUrl: widget.imgUrl,
       ),
     );
   }
