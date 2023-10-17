@@ -17,6 +17,24 @@
             "location": "Nasa Paligid mo",
             "cardUrl": "assets/jopak/card.jpg",
             "avatarUrl": "assets/jopak/profile.jpg"
+        },
+        {
+            "id": "3",
+            "name": "Third person here",
+            "title": "Embedded Systems Engineer",
+            "number": "0995 428 9231",
+            "location": "Sa puso mo",
+            "cardUrl": "assets/juvi/card.jpg",
+            "avatarUrl": "assets/juvi/profile.jpg"
+        },
+        {
+            "id": "4",
+            "name": "4th person here",
+            "title": "CEAT Programming Professor",
+            "number": "Unknown",
+            "location": "Nasa Paligid mo",
+            "cardUrl": "assets/jopak/card.jpg",
+            "avatarUrl": "assets/jopak/profile.jpg"
         }
     ]
 }
