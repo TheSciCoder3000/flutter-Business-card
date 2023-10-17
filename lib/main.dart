@@ -8,6 +8,7 @@ void main() {
     ChangeNotifierProvider(
       create: (context) => CardProvider(),
       child: const MaterialApp(
+        title: 'Tinder Business Card',
         home: Scaffold(
           backgroundColor: Color.fromARGB(255, 52, 52, 52),
           body: SafeArea(child: MainPage()),
@@ -44,12 +45,26 @@ class _MainPageState extends State<MainPage> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 70.0),
       child: Stack(
-        children: cardData.map((cardInfo) => 
-          TinderCard(
-            cardInfo: cardInfo,
-            isFront: cardData.last['id'] == cardInfo['id'],
-          )
-        ).toList(),
+        clipBehavior: Clip.none,
+        children: cardData.map((cardInfo) {
+          int indx = cardData.indexOf(cardInfo);
+          int noItems = cardData.length;
+
+          bool isLast = indx == (noItems-1);
+          bool isSecondLast = indx == (noItems-2);
+          return AnimatedPositioned(
+            curve: Curves.easeInOut,
+            duration: const Duration(milliseconds: 300),
+            top: isLast ? 10 : isSecondLast ? 0 : -10,
+            left: isLast ? 10 : isSecondLast ? 0 : -10,
+            bottom: isLast ? -10 : isSecondLast ? 0 : 10,
+            right: isLast ? -10 : isSecondLast ? 0 : 10,
+            child: TinderCard(
+              cardInfo: cardInfo,
+              isFront: cardData.last['id'] == cardInfo['id'],
+            ),
+          );
+        }).toList(),
       )
     );
   }
