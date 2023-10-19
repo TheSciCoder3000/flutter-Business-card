@@ -53,6 +53,7 @@ class _MainPageState extends State<MainPage> {
           bool isLast = indx == (noItems-1);
           bool isSecondLast = indx == (noItems-2);
           return AnimatedPositioned(
+            key: Key(cardInfo['id']),
             curve: Curves.easeInOut,
             duration: const Duration(milliseconds: 300),
             top: isLast ? 10 : isSecondLast ? 0 : -10,

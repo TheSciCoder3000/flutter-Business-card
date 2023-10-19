@@ -20,7 +20,9 @@ class BusinessCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: UniqueKey(),
       decoration: BoxDecoration(
+          color: Colors.grey[600],
           image: DecorationImage(
             image: AssetImage(imgUrl), 
             fit: BoxFit.cover,
@@ -91,7 +93,7 @@ class CardDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 70.0),
+      margin: const EdgeInsets.symmetric(horizontal: 30.0),
       child: Row(
         children: [
           icon,
