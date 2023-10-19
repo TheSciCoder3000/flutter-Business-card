@@ -20,21 +20,93 @@
         },
         {
             "id": "3",
-            "name": "Third person here",
-            "title": "Embedded Systems Engineer",
-            "number": "0995 428 9231",
-            "location": "Sa puso mo",
-            "cardUrl": "assets/juvi/card.jpg",
-            "avatarUrl": "assets/juvi/profile.jpg"
+            "name": "Ace Ilog",
+            "title": "VHDL Developer",
+            "number": "0999 582 2254",
+            "location": "Nagcocozy kasama si owner",
+            "cardUrl": "assets/ace/card.jpg",
+            "avatarUrl": "assets/ace/profile.jpg"
         },
         {
             "id": "4",
-            "name": "4th person here",
-            "title": "CEAT Programming Professor",
-            "number": "Unknown",
-            "location": "Nasa Paligid mo",
-            "cardUrl": "assets/jopak/card.jpg",
-            "avatarUrl": "assets/jopak/profile.jpg"
+            "name": "Drew Alecha",
+            "title": "Billiard Sniper",
+            "number": "0969 775 5823",
+            "location": "Nasa kanila tatay rin",
+            "cardUrl": "assets/drew/card.jpg",
+            "avatarUrl": "assets/drew/profile.jpg"
+        },
+        {
+            "id": "5",
+            "name": "Evane Pacot",
+            "title": "tiktoker",
+            "number": "0947 596 6684",
+            "location": "sa gym nagawa ng robot",
+            "cardUrl": "assets/evane/card.jpg",
+            "avatarUrl": "assets/evane/profile.jpg"
+        },
+        {
+            "id": "6",
+            "name": "Ged Dela Cruz",
+            "title": "Mina lover",
+            "number": "0975 586 7742",
+            "location": "nasa concert, di pa nauwi",
+            "cardUrl": "assets/ged/card.jpg",
+            "avatarUrl": "assets/ged/profile.jpg"
+        },
+        {
+            "id": "7",
+            "name": "Ivan Abillon",
+            "title": "Programming pianist",
+            "number": "0947 596 6684",
+            "location": "Nasa bahay pa",
+            "cardUrl": "assets/ivan/card.jpg",
+            "avatarUrl": "assets/ivan/profile.jpg"
+        },
+        {
+            "id": "8",
+            "name": "Joshua Chan",
+            "title": "Ang nagbago",
+            "number": "0977 482 9365",
+            "location": "Nasa 2nd home",
+            "cardUrl": "assets/joshua/card.jpg",
+            "avatarUrl": "assets/joshua/profile.jpg"
+        },
+        {
+            "id": "9",
+            "name": "Kalila Banzuela",
+            "title": "tiktoker",
+            "number": "0947 596 6684",
+            "location": "nag-duduty pa",
+            "cardUrl": "assets/kalila/card.jpg",
+            "avatarUrl": "assets/kalila/profile.jpg"
+        },
+        {
+            "id": "10",
+            "name": "Kenneth Tagle",
+            "title": "tiktoker",
+            "number": "0947 596 6684",
+            "location": "Nagpapalipad ng sasakyan",
+            "cardUrl": "assets/kenneth/card.jpg",
+            "avatarUrl": "assets/kenneth/profile.jpg"
+        },
+        {
+            "id": "11",
+            "name": "Michael Doce",
+            "title": "Taga-tago ng cue ball",
+            "number": "0947 596 6684",
+            "location": "Nasa kanila tatay, naglalaro",
+            "cardUrl": "assets/michael/card.jpg",
+            "avatarUrl": "assets/michael/profile.jpg"
+        },
+        {
+            "id": "12",
+            "name": "Paul Corrales",
+            "title": "Drag racer",
+            "number": "0947 596 6684",
+            "location": "sa sasakyan, natutulog",
+            "cardUrl": "assets/paul/card.jpg",
+            "avatarUrl": "assets/paul/profile.jpg"
         }
     ]
 }
