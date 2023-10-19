@@ -58,7 +58,7 @@ class BusinessCard extends StatelessWidget {
 
           Text(
             name, 
-            style: const TextStyle(color: Colors.white, fontSize: 25.0),
+            style: const TextStyle(color: Colors.white, fontSize: 25.0, fontFamily: 'Inconsolata'),
           ),
           const SizedBox(height: 10.0,),
           Text(
