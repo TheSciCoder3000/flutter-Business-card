@@ -66,6 +66,16 @@ flutter:
     - assets/jopak/profile.jpg
     - assets/juvi/card.jpg
     - assets/juvi/profile.jpg
+    - assets/ace/
+    - assets/drew/
+    - assets/evane/
+    - assets/ged/
+    - assets/ivan/
+    - assets/joshua/
+    - assets/kalila/
+    - assets/kenneth/
+    - assets/michael/
+    - assets/paul/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
